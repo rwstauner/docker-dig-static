@@ -1,0 +1,17 @@
+# What is
+
+A docker image containing (solely) statically compiled versions of:
+
+- `dig`
+- `host`
+- `nslookup`
+
+# Usage
+
+In a Dockerfile to copy into another image:
+
+    COPY --from=rwstauner/dig-static /bin/dig /usr/local/bin/
+
+Or use it directly on the command line:
+
+    docker run rwstauner/dig-static +short google.com
